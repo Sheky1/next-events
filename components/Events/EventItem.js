@@ -4,6 +4,7 @@ import classes from "./event-item.module.css";
 import DateIcon from "../Icons/DateIcon";
 import ArrowRightIcon from "../Icons/ArrowRightIcon";
 import AddressIcon from "../Icons/AddressIcon";
+import Image from "next/image";
 
 const EventItem = ({ id, title, image, date, location }) => {
 	const formattedDate = new Date(date).toLocaleDateString("en-US", {
@@ -15,7 +16,7 @@ const EventItem = ({ id, title, image, date, location }) => {
 
 	return (
 		<li className={classes.item}>
-			<img src={"/" + image} alt={title} />
+			<Image src={"/" + image} alt={title} width={250} height={160} />
 			<div className={classes.content}>
 				<div className={classes.summary}>
 					<h2>{title}</h2>

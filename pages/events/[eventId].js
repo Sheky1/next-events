@@ -3,18 +3,25 @@ import { getFeaturedEvents, getEventById } from "../../helpers/api-util";
 import EventSummary from "../../components/EventDetail/event-summary";
 import EventLogistics from "../../components/EventDetail/event-logistics";
 import EventContent from "../../components/EventDetail/event-content";
+import Head from "next/head";
 
 const EventDetailPage = ({ event }) => {
 	if (!event) {
 		return (
-			<div className="center">
-				<p>Loading...</p>
-			</div>
+			<>
+				<div className="center">
+					<p>Loading...</p>
+				</div>
+			</>
 		);
 	}
 
 	return (
 		<>
+			<Head>
+				<title>{event.title}</title>
+				<meta name="description" content={event.description} />
+			</Head>
 			<EventSummary title={event.title} />
 			<EventLogistics date={event.date} address={event.location} image={event.image} imageAlt={event.title} />
 			<EventContent>

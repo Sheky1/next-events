@@ -4,11 +4,20 @@ import EventList from "../../components/Events/EventList";
 import ResultsTitle from "../../components/Events/ResultsTitle";
 import Button from "../../components/UI/Button";
 import ErrorAlert from "../../components/UI/ErrorAlert";
+import Head from "next/head";
 
 const FilteredEventsPage = ({ hasError, events, filterDate }) => {
+	const pageHeadData = (
+		<Head>
+			<title>Filtered Events</title>
+			<meta name="description" content={`All events for ${filterDate.month}/${filterDate.year}`} />
+		</Head>
+	);
+
 	if (hasError) {
 		return (
 			<>
+				{pageHeadData}
 				<ErrorAlert>
 					<p>Invalid filter. Adjust the values!</p>
 				</ErrorAlert>
@@ -22,6 +31,7 @@ const FilteredEventsPage = ({ hasError, events, filterDate }) => {
 	if (!events || events.length === 0) {
 		return (
 			<>
+				{pageHeadData}
 				<ErrorAlert>
 					<p>No events found for the chosen filter</p>
 				</ErrorAlert>
@@ -36,6 +46,7 @@ const FilteredEventsPage = ({ hasError, events, filterDate }) => {
 
 	return (
 		<>
+			{pageHeadData}
 			<ResultsTitle date={date} />
 			<EventList events={events} />
 		</>
