@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "../UI/Button";
 import classes from "./event-item.module.css";
-import DateIcon from "../Icons/date-icon";
-import ArrowRightIcon from "../Icons/arrow-right-icon";
-import AddressIcon from "../Icons/address-icon";
+import DateIcon from "../Icons/DateIcon";
+import ArrowRightIcon from "../Icons/ArrowRightIcon";
+import AddressIcon from "../Icons/AddressIcon";
 
 const EventItem = ({ id, title, image, date, location }) => {
 	const formattedDate = new Date(date).toLocaleDateString("en-US", {
