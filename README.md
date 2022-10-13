@@ -1,6 +1,6 @@
 The project was made along the [NextJS course](https://www.udemy.com/course/nextjs-react-the-complete-guide/) from Udemy.
 
-![Homepage]("./homepage.png")
+![Homepage](./homepage.png)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
